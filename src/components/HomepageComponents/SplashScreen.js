@@ -70,8 +70,14 @@ class SplashScreen extends Component {
         }
 
         this.sectionRef = React.createRef();
-        this.timer = window && window.addEventListener('scroll', this._updateScrollPosition)
+    }
 
+    componentDidMount() {
+        !!window && window.addEventListener('scroll', this._updateScrollPosition)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this._updateScrollPosition)
     }
 
     _updateScrollPosition = _ => {
@@ -79,7 +85,7 @@ class SplashScreen extends Component {
             const offsetHeight = this.sectionRef.current.clientHeight
             const offsetTop = this.sectionRef.current.clientTop
 
-            const currentPosition = (window && window.scrollY) || 0
+            const currentPosition = (!!window && window.scrollY) || 0
 
             if (currentPosition < offsetHeight) {
                 const scrollProgress = parseInt(((currentPosition - offsetTop) / (offsetHeight - offsetTop)) * 100)
