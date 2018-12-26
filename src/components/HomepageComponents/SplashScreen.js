@@ -13,7 +13,7 @@ const SectionImageStyles = `
     transition: all .001s ease-in-out;
 `
 
-const Section = styled.section`
+const SplashScreenSection = styled.section`
     position: relative;
     height: calc(100vh - 8rem);
     color: white;
@@ -97,17 +97,15 @@ class SplashScreen extends Component {
 
     render() {
         const { scrollProgress } = this.state
-        console.log({ scrollProgress })
-
         return (
-            <Section ref={this.sectionRef}>
+            <SplashScreenSection ref={this.sectionRef}>
                 <SpotlightImage multiplier={.8} scrollProgress={scrollProgress} />
                 <BoyImage multiplier={.8} scrollProgress={scrollProgress} />
                 <BigText multiplier={1.1} scrollProgress={scrollProgress} size={'15rem'} top={'300px'} left={'-250px'} zIndex={3} >Code</BigText>
                 <BigText multiplier={.2} scrollProgress={scrollProgress} size={'10rem'} top={'calc( 100% - 17rem)'} left={'-100px'} zIndex={5}>Innovation</BigText>
                 <BigText multiplier={.5} scrollProgress={scrollProgress} size={'9rem'} top={'450px'} left={'210px'} zIndex={3}>Design</BigText>
                 <BigText multiplier={2.5} scrollProgress={scrollProgress} size={'6rem'} top={'220px'} left={'140px'} zIndex={6}>Hack</BigText>
-            </Section>
+            </SplashScreenSection>
         );
     }
 }

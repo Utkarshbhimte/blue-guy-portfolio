@@ -6,12 +6,15 @@ import Image from '../components/image'
 import SEO from '../components/seo'
 
 import SplashScreen from '../components/HomepageComponents/SplashScreen'
+import AboutMe from '../components/HomepageComponents/AboutMe'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <SplashScreen />
-    <Link to="/page-2/">Go to page 2</Link>
+    <AboutMe />
+
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 
